@@ -20,14 +20,9 @@ class TextPage extends StatelessWidget {
               "Un Titre",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text(
-              message,
-              style: const TextStyle(fontSize: 25, color: Colors.blue),
-              // style: Theme.of(context)
-              //     .textTheme
-              //     .bodyMedium!
-              //     .copyWith(color: Colors.redAccent)
-            ),
+            Text(message,
+                // style: const TextStyle(fontSize: 25, color: Colors.blue),
+                style: Theme.of(context).textTheme.bodyMedium!),
             Wrap(
               spacing: 10,
               children: [
@@ -56,6 +51,11 @@ class TextPage extends StatelessWidget {
                   width: 100,
                   color: Theme.of(context).colorScheme.surfaceTint,
                 ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
               ],
             ),
             const SizedBox(height: 30),
@@ -63,19 +63,19 @@ class TextPage extends StatelessWidget {
               "Choix du thème",
               style: const TextStyle(fontSize: 25, color: Colors.blue),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     ElevatedButton(
-            //         onPressed: () =>
-            //             MyApp.of(context).changeTheme(ThemeMode.light),
-            //         child: Text('Light')),
-            //     ElevatedButton(
-            //         onPressed: () =>
-            //             MyApp.of(context).changeTheme(ThemeMode.dark),
-            //         child: Text('Dark')),
-            //   ],
-            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () =>
+                        MyApp.of(context).changeTheme(ThemeMode.light),
+                    child: Text('Light')),
+                ElevatedButton(
+                    onPressed: () =>
+                        MyApp.of(context).changeTheme(ThemeMode.dark),
+                    child: Text('Dark')),
+              ],
+            ),
           ],
         ),
       ),
